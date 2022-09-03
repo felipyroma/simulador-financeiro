@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculadora Financeira </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div class="container">
+            <img src="./image/logo.calculadora.png" alt="logo do site">
+
+            <ul class="navbar">
+                <li> Quem somos nós </li>
+                <li class="calculadora-nav"> Calculadora financeira </li>
+                <li> Fale conosco </li>
+                <li> Login </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="simulator">
+        <h1> Simulador financeiro </h1>
+
+        <p>
+            Este simulador tem a capacidade de calcular o investimento perdido, com base no percentual de perda de sacas de café dos ultimos 3 anos.
+        </p>
+
+        <p> Digite a àrea da estufa de café em hectares <input id="ipt_areaHectare" type="text"> </p>
+
+        <button onclick="calcular()"> Calcular perda </button> <br> <br>
+
+        <p id="res"></p>
+
+        <!-- <p> Digite a area da estufa de café em hectares <input type="text"> </p> -->
+        
+        
+    </div>
+
+</body>
+
+<script>
+    function calcular() {
+        var areaHectare = Number(ipt_areaHectare.value)
+        var sacas = 150 * areaHectare   // 150 sacas de café por hectare
+        var investimento = 14000 * areaHectare
+        var valorSacas = (sacas * 465.85) * 0.82 // 465,85 reais por saca, descontando valor tributário ICMS
+        var perdaSacas = sacas * 0.1965
+        var perdaValorSacas = valorSacas * 0.1965
+        var prejuizoIvestimento = investimento * 0.1965
+
+        res.innerHTML = `De acordo com a média de investimento de R$14.000 por hectare de cafezal, e tendo em vista a sua posse de ${areaHectare} hectares nos quais resultam em aproximadamente 150 sacas cada, estima-se que você produzirá ${sacas} sacas de café investindo R$${investimento} este ano, vendendo-as a preço de mercado (R$465 por saca) chegamos a um valor de R$${valorSacas.toFixed(0)}, com o valor tributário já descontado. Todavia, com base no percentual de perdas de sacas de 19,65% dos ultimos 3 anos, por conta de mudanças climáticas, calcula-se uma perda de ${perdaSacas.toFixed(0)} sacas de café, causando um prejuízo de R$${prejuizoIvestimento} do valor investido e uma perda de R$${perdaValorSacas.toFixed(0)} na venda total.`
+
+    }
+
+
+</script>
+
+</html>

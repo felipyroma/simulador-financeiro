@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.header .container {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container img {
+    width: 15%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 600px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calculadora-nav {
+    color: #FFDE59;
+}
+
+.simulator {
+    margin: auto;
+    width: 90%;
+}
+
+p {
+    width: 50%;
+}
+
